@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:transitionName="ITEM_TRANSITION"
+    tools:context=".presentation.details.DetailsActivity">
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_images"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_price"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_marginTop="-20dp"
+        android:padding="@dimen/padding_small"
+        android:background="@drawable/background_card"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/rv_images"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:text="R$2000,00"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:layout_marginStart="@dimen/margin_small"
+        android:textStyle="bold"
+        android:textSize="@dimen/text_large"
+        app:layout_constraintTop_toBottomOf="@id/rv_images"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:text="Apartamento para venda"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_bedroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        app:layout_constraintTop_toBottomOf="@id/tv_title"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        tools:text="3 quartos"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_bathroom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_smallest"
+        app:layout_constraintTop_toBottomOf="@id/tv_bedroom"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        tools:text="1 banheiros"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_area"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_smallest"
+        app:layout_constraintTop_toBottomOf="@id/tv_bathroom"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        tools:text="28 m2"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_garage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_smallest"
+        app:layout_constraintTop_toBottomOf="@id/tv_area"
+        app:layout_constraintStart_toStartOf="@id/tv_title"
+        tools:text="1 vagas"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bnt_map"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/margin_small"
+        android:layout_marginTop="@dimen/margin_small"
+        android:background="@mipmap/ic_maps"
+        app:layout_constraintTop_toTopOf="@id/tv_title_address"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_title_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/margin_small"
+        android:text="Endereço"
+        android:textSize="@dimen/text_large"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/tv_garage"
+        app:layout_constraintStart_toStartOf="@id/tv_title"/>
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tv_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/tv_title_address"
+        app:layout_constraintStart_toStartOf="@id/tv_title_address"/>
+    <ProgressBar
+        android:id="@+id/loading_details"
+        android:layout_width="@dimen/loading_size"
+        android:layout_height="@dimen/loading_size"
+        android:visibility="invisible"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

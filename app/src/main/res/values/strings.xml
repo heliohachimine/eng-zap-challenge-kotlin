@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Teste de engenharia do GrupoZap</string>
+    <string name="filter_title">Clique abaixo para filtrar os imóveis por portal</string>
+    <string name="error_loading">Ocorreu um erro ao carregar as informações</string>
+    <string name="to_rental">Apartamento para aluguel</string>
+    <string name="to_sale">Apartamento para venda</string>
+    <string name="previous">Anterior</string>
+    <string name="next">Próximo</string>
+</resources>

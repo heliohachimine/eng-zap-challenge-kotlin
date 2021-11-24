@@ -1,0 +1,39 @@
+name: Pull Request
+
+on:
+  push:
+    branches:
+      - master
+      - develop
+  pull_request:
+    branches:
+      - master
+      - develop
+
+jobs:
+  pr_verification:
+    name: PR Check
+    runs-on: macos-latest
+
+    steps:
+      -   name: Checkout Code
+          uses: actions/checkout@v2
+          with:
+            fetch-depth: 100
+
+      -   name: Cache fastlane dependencies
+          uses: actions/cache@v2
+          with:
+            path: ~/.gem
+            key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
+
+      -   name: Install Fastlane
+          run: bundle config set path '~/.gem' && bundle install
+
+      -   name: execute Fastlane
+          env:
+            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          run: bundle exec fastlane pull_request_verification
+
+      -   name: Ktlint
+          run: ./gradlew ktlintCheck
