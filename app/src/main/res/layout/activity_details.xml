@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:transitionName="ITEM_TRANSITION"
     tools:context=".presentation.details.DetailsActivity">
+    <include layout="@layout/activity_base"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_images"
         android:layout_width="match_parent"

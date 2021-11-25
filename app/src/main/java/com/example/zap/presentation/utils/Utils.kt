@@ -1,4 +1,4 @@
-package com.example.zap.presentation.main
+package com.example.zap.presentation.utils
 
 import com.example.zap.presentation.enum.BusinessType
 

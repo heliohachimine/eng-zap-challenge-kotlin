@@ -1,7 +1,7 @@
 package com.example.zap.presentation
 
 import com.example.zap.presentation.enum.BusinessType
-import com.example.zap.presentation.main.Utils
+import com.example.zap.presentation.utils.Utils
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 

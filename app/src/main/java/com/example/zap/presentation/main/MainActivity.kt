@@ -21,9 +21,10 @@ import org.koin.android.ext.android.inject
 import org.koin.android.viewmodel.ext.android.viewModel
 import androidx.recyclerview.widget.LinearSmoothScroller
 import androidx.recyclerview.widget.RecyclerView.SmoothScroller
+import com.example.zap.presentation.utils.BaseActivity
 
 
-class MainActivity : AppCompatActivity(), ButtonListener, AdapterListener {
+class MainActivity : BaseActivity(), ButtonListener, AdapterListener {
 
     companion object {
         val EXTRA_ID = "IMMOBILE_ID"
@@ -100,7 +101,7 @@ class MainActivity : AppCompatActivity(), ButtonListener, AdapterListener {
         viewModel.dataLiveData.observe(
             this,
             {
-                main_progress.visibility = View.INVISIBLE
+                hideLoading()
                 when (it) {
                     is Either.Left -> {
                         Toast.makeText(
@@ -134,7 +135,7 @@ class MainActivity : AppCompatActivity(), ButtonListener, AdapterListener {
     }
 
     override fun onClickButton(view: View) {
-        main_progress.visibility = View.VISIBLE
+        showLoading()
         when (view.id) {
             R.id.iv_logo_zap -> {
                 currentPage = 0

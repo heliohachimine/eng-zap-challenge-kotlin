@@ -5,11 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.zap.core.Either
 import com.example.zap.domain.Repository
-import com.example.zap.presentation.enum.BusinessType
 import com.example.zap.presentation.enum.ListType
-import com.example.zap.presentation.main.Utils.checkVivaImmobile
-import com.example.zap.presentation.main.Utils.checkZapImmobile
-import com.example.zap.presentation.main.Utils.insideBoundBoxZap
+import com.example.zap.presentation.utils.Utils.checkVivaImmobile
+import com.example.zap.presentation.utils.Utils.checkZapImmobile
+import com.example.zap.presentation.utils.Utils.insideBoundBoxZap
 import com.example.zap.presentation.model.ImmobileVO
 import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
@@ -31,8 +30,8 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
                                     it.pricingInfos.businessType,
                                     it.pricingInfos.monthlyCondoFee,
                                     it.pricingInfos.price,
-                                    it.address.geolocation.location.lat,
-                                    it.address.geolocation.location.lon
+                                    it.address.lat,
+                                    it.address.lng
                                 )
                             ) {
                                 filteredData.add(it)
@@ -44,8 +43,8 @@ class MainViewModel(private val repository: Repository) : ViewModel() {
                                     it.pricingInfos.price,
                                     it.usableArea
                                 ) || insideBoundBoxZap(
-                                        it.address.geolocation.location.lat,
-                                        it.address.geolocation.location.lon
+                                        it.address.lat,
+                                        it.address.lng
                                     )
                             ) {
                                 filteredData.add(it)

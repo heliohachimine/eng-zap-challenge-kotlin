@@ -8,10 +8,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.zap.R
 import com.example.zap.presentation.enum.BusinessType
-import com.example.zap.presentation.formatArea
-import com.example.zap.presentation.formatBathrooms
-import com.example.zap.presentation.formatBedrooms
-import com.example.zap.presentation.formatParking
+import com.example.zap.presentation.utils.extensions.formatArea
+import com.example.zap.presentation.utils.extensions.formatBathrooms
+import com.example.zap.presentation.utils.extensions.formatBedrooms
+import com.example.zap.presentation.utils.extensions.formatParking
 import com.example.zap.presentation.model.ImmobileVO
 import org.koin.core.KoinComponent
 
@@ -55,10 +55,10 @@ class ImmobileAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), KoinCom
                 val holder = holder as ImmobileViewHolder
                 val item = immobiles[position - 1]
                 holder.itemView.animation = AnimationUtils.loadAnimation(holder.itemView.context, R.anim.layout_animation)
-                holder.bedroom.text = item.bedrooms.toString().formatBedrooms()
-                holder.bathroom.text = item.bathrooms.toString().formatBathrooms()
-                holder.area.text = item.usableArea.toString().formatArea()
-                holder.garage.text = item.parkingSpaces.toString().formatParking()
+                holder.bedroom.text = item.bedrooms.formatBedrooms()
+                holder.bathroom.text = item.bathrooms.formatBathrooms()
+                holder.area.text = item.usableArea.formatArea()
+                holder.garage.text = item.parkingSpaces.formatParking()
                 holder.itemView.setOnClickListener {
                     it.transitionName = TRANSITION_NAME
                     adapterListener.onSelectedItem(it, item)
@@ -99,6 +99,4 @@ class ImmobileAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), KoinCom
         immobiles = items
         notifyDataSetChanged()
     }
-
-
 }

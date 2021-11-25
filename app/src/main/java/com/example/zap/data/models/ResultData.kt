@@ -1,5 +1,6 @@
 package com.example.zap.data
 
+import com.example.zap.data.models.Address
 import com.example.zap.data.models.DataObject
 import com.example.zap.data.models.PricingInfos
 import com.example.zap.presentation.enum.ListingStatus
@@ -32,19 +33,13 @@ data class ResultData(
             parkingSpaces = parkingSpaces,
             owner = owner,
             images = images,
-            address = address,
+            address = address.toViewObject(),
             bathrooms = bathrooms,
             bedrooms = bedrooms,
             pricingInfos = pricingInfos.toViewObject()
         )
     }
 }
-
-data class Address(
-    @SerializedName("city") val city: String,
-    @SerializedName("neighborhood") val neighborhood: String,
-    @SerializedName("geoLocation") val geolocation: GeoLocation,
-)
 
 data class GeoLocation(
     @SerializedName("precision") val precision: String,

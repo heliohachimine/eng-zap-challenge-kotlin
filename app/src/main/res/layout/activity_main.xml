@@ -6,6 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/gray"
     tools:context=".presentation.main.MainActivity">
+    <include layout="@layout/activity_base"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_immobile"
@@ -14,16 +15,6 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintBottom_toTopOf="@id/buttons_layout"
-        app:layout_constraintEnd_toEndOf="parent"/>
-
-    <ProgressBar
-        android:id="@+id/main_progress"
-        android:layout_width="@dimen/loading_size"
-        android:layout_height="@dimen/loading_size"
-        android:visibility="invisible"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/buttons_layout"
