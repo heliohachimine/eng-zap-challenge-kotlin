@@ -1,8 +1,8 @@
-package com.example.zap.presentation.utils
+package com.example.zap.domain
 
 import com.example.zap.presentation.enum.BusinessType
 
-object Utils {
+object UseCases {
     val PERCENT_MAX_CONDO_FEE = 30.0
     val PERCENT_MAX_CONDO_FEE_EXCEPTION = 50.0
     val VALUE_MIN_AREA = 3500.0
@@ -24,7 +24,7 @@ object Utils {
         return businessType == BusinessType.SALE && calcAreaPrice(price, usableArea) > VALUE_MIN_AREA
     }
 
-    fun insideBoundBoxZap(lat: Double, lng: Double): Boolean {
+    private fun insideBoundBoxZap(lat: Double, lng: Double): Boolean {
         return lat > LAT_MIN && lat < LAT_MAX && lng > LNG_MIN && lng < LNG_MAX
     }
 

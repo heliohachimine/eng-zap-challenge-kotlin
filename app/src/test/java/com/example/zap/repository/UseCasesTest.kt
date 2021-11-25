@@ -1,11 +1,11 @@
-package com.example.zap.presentation
+package com.example.zap.repository
 
 import com.example.zap.presentation.enum.BusinessType
-import com.example.zap.presentation.utils.Utils
+import com.example.zap.domain.UseCases
 import junit.framework.Assert.assertEquals
 import org.junit.Test
 
-class UtilsTest {
+class UseCasesTest {
 
     @Test
     fun givenImmobileToRentalInsideZapBounds_whenCheckVivaReal_shouldReturnTrue() {
@@ -18,7 +18,7 @@ class UtilsTest {
         val lng = -46.644146
 
         //WHEN
-        val result = Utils.checkVivaImmobile(businessType, condoFee, price, lat, lng)
+        val result = UseCases.checkVivaImmobile(businessType, condoFee, price, lat, lng)
 
         //THEN
         assertEquals(true, result)
@@ -35,7 +35,7 @@ class UtilsTest {
         val lng = -46.644146
 
         //WHEN
-        val result = Utils.checkVivaImmobile(businessType, condoFee, price, lat, lng)
+        val result = UseCases.checkVivaImmobile(businessType, condoFee, price, lat, lng)
 
         //THEN
         assertEquals(false, result)
@@ -52,7 +52,7 @@ class UtilsTest {
         val lng = -23.42323
 
         //WHEN
-        val result = Utils.checkVivaImmobile(businessType, condoFee, price, lat, lng)
+        val result = UseCases.checkVivaImmobile(businessType, condoFee, price, lat, lng)
 
         //THEN
         assertEquals(false, result)
@@ -68,7 +68,7 @@ class UtilsTest {
         val lng = -23.42323
 
         //WHEN
-        val result = Utils.checkVivaImmobile(businessType, condoFee, price, lat, lng)
+        val result = UseCases.checkVivaImmobile(businessType, condoFee, price, lat, lng)
 
         //THEN
         assertEquals(true, result)
@@ -85,7 +85,7 @@ class UtilsTest {
         val lng = -46.644146
 
         //WHEN
-        val result = Utils.checkVivaImmobile(businessType, condoFee, price, lat, lng)
+        val result = UseCases.checkVivaImmobile(businessType, condoFee, price, lat, lng)
 
         //THEN
         assertEquals(false, result)
@@ -102,7 +102,7 @@ class UtilsTest {
         val lng = -23.42323
 
         //WHEN
-        val result = Utils.checkVivaImmobile(businessType, condoFee, price, lat, lng)
+        val result = UseCases.checkVivaImmobile(businessType, condoFee, price, lat, lng)
 
         //THEN
         assertEquals(false, result)
@@ -116,7 +116,7 @@ class UtilsTest {
         val price = 3500.0
 
         //WHEN
-        val result = Utils.checkZapImmobile(businessType, price, usableArea)
+        val result = UseCases.checkZapImmobile(businessType, price, usableArea)
 
         //THEN
         assertEquals(false, result)
@@ -130,7 +130,7 @@ class UtilsTest {
         val price = 7001.0
 
         //WHEN
-        val result = Utils.checkZapImmobile(businessType, price, usableArea)
+        val result = UseCases.checkZapImmobile(businessType, price, usableArea)
 
         //THEN
         assertEquals(true, result)
@@ -144,35 +144,9 @@ class UtilsTest {
         val price = 3500.0
 
         //WHEN
-        val result = Utils.checkZapImmobile(businessType, price, usableArea)
+        val result = UseCases.checkZapImmobile(businessType, price, usableArea)
 
         //THEN
         assertEquals(false, result)
-    }
-
-    @Test
-    fun givenCoordinatesOutsideZapBounds_whenCheckInBoundsZap_shouldReturnFalse() {
-        //GIVEN
-        val lat = -23.23212
-        val lng = -23.42323
-
-        //WHEN
-        val result = Utils.insideBoundBoxZap(lat, lng)
-
-        //THEN
-        assertEquals(false, result)
-    }
-
-    @Test
-    fun givenCoordinatesInsideZapBounds_whenCheckInBoundsZap_shouldReturnTrue() {
-        //GIVEN
-        val lat = -23.556686
-        val lng = -46.644146
-
-        //WHEN
-        val result = Utils.insideBoundBoxZap(lat, lng)
-
-        //THEN
-        assertEquals(true, result)
     }
 }

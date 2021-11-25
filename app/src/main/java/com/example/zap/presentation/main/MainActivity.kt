@@ -139,11 +139,11 @@ class MainActivity : BaseActivity(), ButtonListener, AdapterListener {
         when (view.id) {
             R.id.iv_logo_zap -> {
                 currentPage = 0
-                viewModel.getData(ListType.ZAP)
+                viewModel.getZapData()
             }
             R.id.iv_logo_viva_real -> {
                 currentPage = 0
-                viewModel.getData(ListType.VIVAREAL)
+                viewModel.getVivaRealData()
             }
         }
     }
