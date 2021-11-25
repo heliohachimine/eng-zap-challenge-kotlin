@@ -1,6 +1,6 @@
 package com.example.zap.data.services
 
-import com.example.zap.data.ResultData
+import com.example.zap.data.models.ResultData
 import retrofit2.http.GET
 
 interface Service {

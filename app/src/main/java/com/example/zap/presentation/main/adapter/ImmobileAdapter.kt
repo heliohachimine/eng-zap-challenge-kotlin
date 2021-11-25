@@ -8,11 +8,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.zap.R
 import com.example.zap.presentation.enum.BusinessType
+import com.example.zap.presentation.model.ImmobileVO
 import com.example.zap.presentation.utils.extensions.formatArea
 import com.example.zap.presentation.utils.extensions.formatBathrooms
 import com.example.zap.presentation.utils.extensions.formatBedrooms
 import com.example.zap.presentation.utils.extensions.formatParking
-import com.example.zap.presentation.model.ImmobileVO
 import org.koin.core.KoinComponent
 
 class ImmobileAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), KoinComponent {
@@ -76,8 +76,6 @@ class ImmobileAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>(), KoinCom
                     .load(item.images.first())
                     .centerCrop()
                     .into(holder.photo)
-
-
             }
             HEADER -> {
                 val holder = holder as HeaderViewHolder

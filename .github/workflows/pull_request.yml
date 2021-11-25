@@ -3,11 +3,11 @@ name: Pull Request
 on:
   push:
     branches:
-      - master
+      - main
       - develop
   pull_request:
     branches:
-      - master
+      - main
       - develop
 
 jobs:
@@ -21,19 +21,20 @@ jobs:
           with:
             fetch-depth: 100
 
-      -   name: Cache fastlane dependencies
-          uses: actions/cache@v2
-          with:
-            path: ~/.gem
-            key: ${{ runner.os }}-gem-${{ hashFiles('Gemfile.lock') }}
+      - name: Set up our JDK environment
+        uses: actions/setup-java@v1.4.3
+        with:
+          java-version: 11.0.10
 
-      -   name: Install Fastlane
-          run: bundle config set path '~/.gem' && bundle install
+      -   name: Grant execute permission for gradlew
+          run: chmod +x gradlew
 
-      -   name: execute Fastlane
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: bundle exec fastlane pull_request_verification
+      -   name: Build with Gradle
+          run: ./gradlew build
+
+      -   name: Unit Test
+          run: ./gradlew test
 
       -   name: Ktlint
           run: ./gradlew ktlintCheck
+

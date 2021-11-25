@@ -1,11 +1,11 @@
 package com.example.zap.presentation.utils.extensions
 
 import java.text.NumberFormat
-import java.util.*
+import java.util.Locale
 
 fun Double.toCurrencyBr(): String {
     val formatter: NumberFormat = NumberFormat.getCurrencyInstance(Locale("pt", "BR"))
-    return  formatter.format(this)
+    return formatter.format(this)
 }
 
 fun Double.formatArea(): String {

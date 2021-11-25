@@ -1,6 +1,5 @@
 package com.example.zap.data.models
 
-import com.example.zap.data.GeoLocation
 import com.example.zap.presentation.model.AddressVO
 import com.google.gson.annotations.SerializedName
 

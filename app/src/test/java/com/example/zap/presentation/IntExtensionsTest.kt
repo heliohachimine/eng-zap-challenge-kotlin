@@ -9,37 +9,37 @@ import org.junit.Test
 class IntExtensionsTest {
     @Test
     fun givenIntValue_whenToMaskBedroom_shouldReturnMaskedValue() {
-        //GIVEN
+        // GIVEN
         val value = 10
 
-        //WHEN
+        // WHEN
         val result = value.formatBedrooms()
 
-        //THEN
+        // THEN
         Assert.assertEquals("10 quartos", result)
     }
 
     @Test
     fun givenIntValue_whenToMaskBathroom_shouldReturnMaskedValue() {
-        //GIVEN
+        // GIVEN
         val value = 10
 
-        //WHEN
+        // WHEN
         val result = value.formatBathrooms()
 
-        //THEN
+        // THEN
         Assert.assertEquals("10 banheiros", result)
     }
 
     @Test
     fun givenIntValue_whenToMaskParking_shouldReturnMaskedValue() {
-        //GIVEN
+        // GIVEN
         val value = 10
 
-        //WHEN
+        // WHEN
         val result = value.formatParking()
 
-        //THEN
+        // THEN
         Assert.assertEquals("10 vagas", result)
     }
 }
