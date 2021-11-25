@@ -21,8 +21,9 @@ jobs:
           with:
             fetch-depth: 100
 
+      -   name: Unit Test
+          run: ./gradlew clean test
+
       -   name: Ktlint
           run: ./gradlew ktlintCheck
 
-      -   name: Unit Test
-          run: ./gradlew clean test
