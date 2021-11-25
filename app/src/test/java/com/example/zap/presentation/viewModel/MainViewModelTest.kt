@@ -44,7 +44,7 @@ class MainViewModelTest {
         val list = mockk<ArrayList<ImmobileVO>>()
         val successfulCase = Either.Right(list)
         dispatcher.runBlockingTest {
-            coEvery { repository.getVivaRealData()} returns successfulCase
+            coEvery { repository.getVivaRealData() } returns successfulCase
             viewModel.getVivaRealData()
 
             val result = viewModel.dataLiveData.value
@@ -57,7 +57,7 @@ class MainViewModelTest {
         val exception = mockk<HttpException>()
         val failureCase = Either.Left(exception)
         dispatcher.runBlockingTest {
-            coEvery { repository.getVivaRealData()} returns failureCase
+            coEvery { repository.getVivaRealData() } returns failureCase
             viewModel.getVivaRealData()
 
             val result = viewModel.dataLiveData.value
@@ -70,7 +70,7 @@ class MainViewModelTest {
         val list = mockk<ArrayList<ImmobileVO>>()
         val successfulCase = Either.Right(list)
         dispatcher.runBlockingTest {
-            coEvery { repository.getZapData()} returns successfulCase
+            coEvery { repository.getZapData() } returns successfulCase
             viewModel.getZapData()
 
             val result = viewModel.dataLiveData.value
@@ -83,12 +83,11 @@ class MainViewModelTest {
         val exception = mockk<HttpException>()
         val failureCase = Either.Left(exception)
         dispatcher.runBlockingTest {
-            coEvery { repository.getZapData()} returns failureCase
+            coEvery { repository.getZapData() } returns failureCase
             viewModel.getZapData()
 
             val result = viewModel.dataLiveData.value
             Assert.assertEquals(failureCase, result)
         }
     }
-
 }

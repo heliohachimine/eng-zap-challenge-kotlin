@@ -11,15 +11,15 @@ class AddressTest {
 
     @Test
     fun givenAddress_whenToViewObject_shouldReturnAddressViewObject() {
-        //GIVEN
+        // GIVEN
         val data = mockk<Address>()
         val vo = mockk<AddressVO>()
 
-        //WHEN
+        // WHEN
         every { data.toViewObject() } returns vo
         val result = data.toViewObject()
 
-        //THEN
+        // THEN
         Assert.assertTrue(result is AddressVO)
     }
 }

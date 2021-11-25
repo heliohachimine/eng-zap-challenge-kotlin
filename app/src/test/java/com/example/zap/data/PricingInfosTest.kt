@@ -1,7 +1,6 @@
 package com.example.zap.data
 
 import com.example.zap.data.models.PricingInfos
-import com.example.zap.presentation.model.ImmobileVO
 import com.example.zap.presentation.model.PricingInfoVO
 import io.mockk.every
 import io.mockk.mockk
@@ -11,15 +10,15 @@ import org.junit.Test
 class PricingInfosTest {
     @Test
     fun givenResultData_whenToViewObject_shouldReturnImmobileViewObject() {
-        //GIVEN
+        // GIVEN
         val data = mockk<PricingInfos>()
         val vo = mockk<PricingInfoVO>()
 
-        //WHEN
+        // WHEN
         every { data.toViewObject() } returns vo
         val result = data.toViewObject()
 
-        //THEN
+        // THEN
         Assert.assertTrue(result is PricingInfoVO)
     }
 }

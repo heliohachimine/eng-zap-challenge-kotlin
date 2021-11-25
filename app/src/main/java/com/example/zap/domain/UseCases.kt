@@ -17,7 +17,6 @@ object UseCases {
         } else {
             businessType == BusinessType.RENTAL && calcCondoFee(price, condoFee) < PERCENT_MAX_CONDO_FEE
         }
-
     }
 
     fun checkZapImmobile(businessType: BusinessType, price: Double, usableArea: Double): Boolean {

@@ -1,13 +1,10 @@
-package com.example.zap.data
+package com.example.zap.data.models
 
-import com.example.zap.data.models.Address
-import com.example.zap.data.models.DataObject
-import com.example.zap.data.models.PricingInfos
 import com.example.zap.presentation.enum.ListingStatus
 import com.example.zap.presentation.enum.ListingType
 import com.example.zap.presentation.model.ImmobileVO
 import com.google.gson.annotations.SerializedName
-import java.util.*
+import java.util.Date
 
 data class ResultData(
     @SerializedName("usableAreas") val usableAreas: Double,

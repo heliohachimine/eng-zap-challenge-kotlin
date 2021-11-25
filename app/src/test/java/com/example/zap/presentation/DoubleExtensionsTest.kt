@@ -9,25 +9,25 @@ class DoubleExtensionsTest {
 
     @Test
     fun givenDoubleValue_whenToCurrencyBr_shouldReturnMaskedValue() {
-        //GIVEN
+        // GIVEN
         val value = 1000.99
 
-        //WHEN
+        // WHEN
         val result = value.toCurrencyBr()
 
-        //THEN
+        // THEN
         Assert.assertEquals("R$ 1.000,99", result)
     }
 
     @Test
     fun givenDoubleValue_whenToMaskArea_shouldReturnMaskedValue() {
-        //GIVEN
+        // GIVEN
         val value = 1000.99
 
-        //WHEN
+        // WHEN
         val result = value.formatArea()
 
-        //THEN
+        // THEN
         Assert.assertEquals("1000.99 m2", result)
     }
 }

@@ -1,8 +1,8 @@
 package com.example.zap.presentation.utils
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import com.example.zap.R
 import kotlinx.android.synthetic.main.activity_base.*
 

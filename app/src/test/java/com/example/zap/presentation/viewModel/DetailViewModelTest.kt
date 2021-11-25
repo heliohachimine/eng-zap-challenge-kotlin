@@ -44,7 +44,7 @@ class DetailViewModelTest {
         val immobileVO = mockk<ImmobileVO>()
         val successfulCase = Either.Right(immobileVO)
         dispatcher.runBlockingTest {
-            coEvery { repository.getImmobileById("")} returns successfulCase
+            coEvery { repository.getImmobileById("") } returns successfulCase
             viewModel.getImmobile("")
 
             val result = viewModel.immobileLiveData.value
@@ -57,7 +57,7 @@ class DetailViewModelTest {
         val exception = mockk<HttpException>()
         val failedCase = Either.Left(exception)
         dispatcher.runBlockingTest {
-            coEvery { repository.getImmobileById("")} returns failedCase
+            coEvery { repository.getImmobileById("") } returns failedCase
             viewModel.getImmobile("")
 
             val result = viewModel.immobileLiveData.value

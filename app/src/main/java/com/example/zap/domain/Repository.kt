@@ -1,7 +1,7 @@
 package com.example.zap.domain
 
 import com.example.zap.core.Either
-import com.example.zap.data.Location
+import com.example.zap.data.models.Location
 import com.example.zap.data.services.Service
 import com.example.zap.domain.UseCases.checkVivaImmobile
 import com.example.zap.domain.UseCases.checkZapImmobile
@@ -11,7 +11,7 @@ import retrofit2.HttpException
 
 class Repository(private val service: Service) {
 
-    suspend fun getVivaRealData() : Either<HttpException, ArrayList<ImmobileVO>>{
+    suspend fun getVivaRealData(): Either<HttpException, ArrayList<ImmobileVO>> {
         return try {
             val result = service.getData()
             val filteredData = ArrayList<ImmobileVO>()
@@ -35,7 +35,7 @@ class Repository(private val service: Service) {
         }
     }
 
-    suspend fun getZapData() : Either<HttpException, ArrayList<ImmobileVO>>{
+    suspend fun getZapData(): Either<HttpException, ArrayList<ImmobileVO>> {
         return try {
             val result = service.getData()
             val filteredData = ArrayList<ImmobileVO>()
