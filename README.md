@@ -10,8 +10,8 @@ A arquitetura usada foi o MVVM com conceitos de Clean, já que foi separado em c
 ### - Presentation:
   Onde fica as regras de apresentação e navegação.
   
- Foi desenvolvido os testes unitarios usando Mockk para "mockar" os valores, foi colocado para rodar junto com a esteira de CI configurada no Github Actions,
- ao criar um PR para Main ou Develop esse workflow será executado.
+ Foi desenvolvido os testes unitários usando Mockk para "mockar" os valores, foi colocado para rodar junto com a esteira de CI configurada no Github Actions,
+ ao criar um PR para Main ou Develop esse workflow será executado. Junto com os testes unitários será executado o ktlint que é um analisador de código estático.
   
 ## Tecnologias usadas:
  - Kotlin
