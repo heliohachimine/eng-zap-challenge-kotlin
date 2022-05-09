@@ -22,4 +22,35 @@ class DetailsViewModel(private val repository: Repository) : ViewModel() {
             }
         }
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    dadofhhdas
+    adasdd asd
+    asd
+    da
+    dasd
+    asd
+    asd
+    asf
+    afdas
+    fd
+    qawrfq
 }
